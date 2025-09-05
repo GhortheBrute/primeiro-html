@@ -18,9 +18,15 @@
     </ol>
     <a href="about.html" target="_blank" title="Clique aqui para acessar a página sobre meu site.">Sobre</a>-->
 
-    <form name="signup" target="_blank" method="post" action="teste.html"> Nome: <input type="text" name="name" /><br>
-        Idade: <input type="number" name="age" /><br>
-        Senha: <input type="password" name="password" /><br>
+    <form name="signup" target="_blank" method="post" action="teste.html">
+        <label>Nome: </label><input type="text" name="name" /><br>
+        <label>Idade: </label><input type="number" name="age" min="1" max="100" /><br>
+        <label>Senha: </label><input type="password" name="password" /><br>
+        <label>Range: </label><input type="range" /><br>
+        <label>Color: </label><input type="color"><br>
+        <label>Email: </label><input type="email"><br>
+        <label>Url: </label><input type="url"><br>
+        <label>Date: </label><input type="date"><br>
         <button type="submit">Enviar</button>
         <button type="reset">Reiniciar</button>
     </form>
