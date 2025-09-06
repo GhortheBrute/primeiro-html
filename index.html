@@ -5,31 +5,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página principal</title>
+    <link rel="stylesheet" href="src/css/styles.css" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </head>
 
 <body>
     <strong style="color: rgb(37, 50, 168);">Meu primeiro <i>HTML!</i></strong><br>
-    <!--<input type="text" />
-    <img />
-    <ol>
-        <li>Item 1</li>
-        <li>Item 2</li>
-        <li>Item 3</li>
-    </ol>
-    <a href="about.html" target="_blank" title="Clique aqui para acessar a página sobre meu site.">Sobre</a>-->
 
-    <form name="signup" target="_blank" method="post" action="teste.html">
-        <label>Nome: </label><input type="text" name="name" /><br>
-        <label>Idade: </label><input type="number" name="age" min="1" max="100" /><br>
-        <label>Senha: </label><input type="password" name="password" /><br>
-        <label>Range: </label><input type="range" /><br>
-        <label>Color: </label><input type="color"><br>
-        <label>Email: </label><input type="email"><br>
-        <label>Url: </label><input type="url"><br>
-        <label>Date: </label><input type="date"><br>
-        <button type="submit">Enviar</button>
-        <button type="reset">Reiniciar</button>
-    </form>
+    <h1>Meu site</h1>
+    <a href="index.html" style="text-decoration: none; margin-right: 10px;">Home</a>
+
+    <a href="about.html" style="text-decoration: none; margin-right: 10px;">Sobre</a>
+
+    <a href="contact.html" style=" text-decoration: none; margin-right: 10px;">Contato</a>
+
+    <ul>
+        <li>Tipos
+            <ul>
+                <li><a href="tipos/tiposCheckBoxRadio.html">Tipos de Input</a></li>
+                <li><a href="tipos/buttons.html">Tipos de Botões</a></li>
+                <li><a href="tipos/select.html">Tipos de Select</a></li>
+                <li><a href="tipos/textarea.html">Tipos de Textarea</a></li>
+                <li><a href="tipos/lists.html">Tipos de Listas</a></li>
+                <li><a href="tipos/inputs.html">Tipos de Inputs</a></li>
+            </ul>
+        </li>
+        <li>Formatações
+            <ul>
+                <li><a href="formatacoes/textos.html">Textos</a></li>
+                <li><a href="formatacoes/divspan.html">Div e Span</a></li>
+                <li><a href="formatacoes/fieldsets.html">Fieldsets</a></li>
+                <li><a href="formatacoes/embeds.html">Embeds</a></li>
+            </ul>
+
+        </li>
+    </ul>
+
+
+
+
+    <script>
+
+        document.querySelectorAll('.dropdown').forEach(function (dropdown) {
+            dropdown.addEventListener('mouseenter', function () {
+                const menu = this.querySelector('.dropdown-menu');
+                const toggle = this.querySelector('.dropdown-toggle');
+                const bsDropdown = bootstrap.Dropdown.getOrCreateInstance(toggle);
+                bsDropdown.show();
+            });
+
+            dropdown.addEventListener('mouseleave', function () {
+                const menu = this.querySelector('.dropdown-menu');
+                const toggle = this.querySelector('.dropdown-toggle');
+                const bsDropdown = bootstrap.Dropdown.getOrCreateInstance(toggle);
+                bsDropdown.hide();
+            });
+        });
+
+    </script>
+
+
 </body>
 
 </html>

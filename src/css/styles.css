@@ -1,0 +1,67 @@
+/* Estilo básico do menu */
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  position: relative;
+}
+
+.menu > li {
+  background-color: #3498db;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.menu > li:hover {
+  background-color: #2980b9;
+}
+
+/* Submenu oculto por padrão */
+.submenu, .subsubmenu {
+  display: none;
+  position: relative;
+  top: 0;
+  left: 0%;
+  background-color: #f1f1f1;
+  min-width: 180px;
+  z-index: 1;
+  white-space: nowrap;
+}
+
+.submenu li, .subsubmenu li {
+  padding: 10px;
+  color: black;
+}
+
+.submenu li:hover, .subsubmenu li:hover {
+  background-color: #ddd;
+}
+
+.menu li:hover > .submenu,
+.submenu li:hover > .subsubmenu {
+  display: block;
+}
+
+
+/* Responsivo: se o submenu estiver perto da borda, joga pra esquerda */
+@media (max-width: 768px) {
+  .submenu, .subsubmenu {
+    right: auto;
+    right: 10%;
+  }
+}
+
+/* Submenu dentro do dropdown */
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-left: 0.1rem;
+}
