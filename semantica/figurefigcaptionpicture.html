@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Figure, Figcaption, Picture</title>
 </head>
+
 <body>
-    
+    <figure>
+        <img src="../src/media/image.jpg" width="400">
+        <figcaption>Família Forger</figcaption>
+    </figure>
+
+    <picture>
+        <source srcset="../src/media/image.jpg" width="500" media="(min-width: 600px)">
+        <img src="../src/media/image.jpg" width="100">
+    </picture>
+
 </body>
+
 </html>
