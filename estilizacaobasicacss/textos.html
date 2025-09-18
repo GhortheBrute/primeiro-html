@@ -5,10 +5,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Textos</title>
+    <style>
+        .exemplo {
+            width: 370px;
+            border: 1px solid black;
+            text-align: justify;
+        }
+
+        .transform {
+            text-transform: none;
+            padding: 10px;
+            background-color: lavender;
+        }
+
+        h1 + p {
+            text-decoration-line: underline;
+            text-decoration-style: wavy;
+            text-decoration-color: blue;
+            text-decoration-thickness: 5px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .ident {
+            text-indent: 50px;
+            letter-spacing: 15px;
+            word-spacing: 15px;
+        }
+    </style>
 </head>
 
 <body>
+    <h1>Propriedade <code>text-align</code></h1>
+    <p class="transform">É responsável por definir quais caracteres vão estar em maiúsculo, minúsculo, etc.</p>
 
+    <br><br>
+    <p class="exemplo">
+        lorem ipsum dolor sit amet, consectetur adipisicing elit.lorem ipsum dolor sit amet, consectetur adipisicing
+        elit.
+        lorem ipsum dolor sit amet, consectetur adipisicing elit.lorem ipsum dolor sit amet, consectetur adipisicing
+        elit.
+        lorem ipsum dolor sit amet, consectetur adipisicing elit.lorem ipsum dolor sit amet, consectetur adipisicing
+        elit.
+        lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    </p>
+
+    <p>
+        É uma popriedade abreviada de:
+    <ul>
+        <li><code>text-decoration-line</code></li>
+        <li><code>text-decoration-style</code></li>
+        <li><code>text-decoration-color</code></li>
+        <li><code>text-decoration-thickness</code></li>
+    </ul>
+
+    <a href="#">Link de exemplo</a>
+
+    <p class="ident">Parágrafo para indentar</p>
 </body>
 
 </html>
