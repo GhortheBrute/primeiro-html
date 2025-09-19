@@ -4,18 +4,32 @@ const state = {
         enemy: document.querySelector('.enemy'),
         timeLeft: document.querySelector('#time-left'),
         score: document.querySelector('#score'),
+        lives: document.querySelector('#lives'),
     },
     values: {
         gameVelocity: 1000,
         hitPosition: 0,
         result: 0,
         currentTime: 60,
+        lives: 3,
     },
     actions: {
         timerId: setInterval(randomSquare, 1000),
         countDownTimerId: setInterval(countDown, 1000),
     }
 };
+
+function loseLife() {
+    state.values.lives--;
+    state.view.lives.textContent = `x${state.values.lives}`;
+    
+    if (state.values.lives <= 0) {
+        clearInterval(state.actions.countDownTimerId);
+        clearInterval(state.actions.timerId);
+        playSound("gameover")
+        alert("Game Over!\nVocê perdeu todas as vidas.\nSua pontuação foi: " + state.values.result);
+    } else playSound('lose-life');
+}
 
 function countDown() {
     state.values.currentTime--;
@@ -29,7 +43,7 @@ function countDown() {
 }
 
 function playSound(audioName) {
-    let audio = new Audio(`./assets/audios/${audioName}.m4a`);
+    let audio = new Audio(`./assets/audios/${audioName}.wav`);
     audio.volume = 0.1;
     audio.play();
 }
@@ -53,6 +67,9 @@ function addListenerHitBox() {
                 state.view.score.textContent = state.values.result;
                 state.values.hitPosition = null;
                 playSound("hit");
+            } else {
+                state.values.hitPostion = null;
+                loseLife();
             }
         });
     });
